@@ -1,0 +1,174 @@
+html {
+    font-family: sans-serif;
+}
+
+body > div {
+    width: 400px;
+    margin: 120px auto;
+}
+
+h1 {
+    background-color: #000000;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 2em;
+    font-size: 2em;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 1.4em;
+    position: relative;
+    margin: 2em 0;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: -0.8em;
+    left: 0;
+    right: 0;
+    border-bottom: 3px solid #ec576b;
+}
+
+input, textarea, select {
+    width: 100%;
+    margin: 0.5em 0;
+    display:block;
+    border:none;
+    border-bottom:1px solid #757575;
+    padding: 20px 0 10px;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #757575 4%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #757575 4%);
+    background-position: -400px 0;
+    background-size: 400px 100%;
+    background-repeat: no-repeat;
+    font-size: 1em;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    box-shadow: none;
+    background-position: 0 0;
+    -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+            transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+}
+
+select {
+    height: 3em;
+    border-radius: 0;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+input::-ms-input-placeholder
+textarea::-ms-input-placeholder
+input::-moz-placeholder
+textarea::-moz-placeholder
+input::-moz-placeholder
+textarea::-moz-placeholder {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder,
+input:focus::-ms-input-placeholder
+textarea:focus::-ms-input-placeholder
+input:focus::-moz-placeholder
+textarea:focus::-moz-placeholder
+input:focus::-moz-placeholder
+textarea:focus::-moz-placeholder {
+    color: #757575;
+    font-size: 11px;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    visibility: visible !important;
+}
+
+input[type=submit] {
+    line-height: 2.5em;
+    background-color: #3cc47c;
+    color: white;
+    margin: 0.5em 0;
+    opacity: 1;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 6px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+input[type=submit]:hover {
+    -webkit-transform: translateY(-2px);
+        -ms-transform: translateY(-2px);
+            transform: translateY(-2px);
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+input[type=submit]:focus {
+    outline: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul > li {
+    border-radius: 5px;
+    background-color: #d9d9d9;
+    padding: 1em;
+    margin-bottom: 1em;
+    overflow: hidden;
+    position: relative;
+}
+
+ul > li > h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.concluidas > li {
+    color: red;
+}
+
+ul > li > h3, ul > li > p {
+    max-width: 80%;
+    margin-bottom: 10px;
+}
+
+ul > li > form {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 15%;
+}
+
+ul > li > form > input[type=submit] {
+    top: 0;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+    border: 1em;
+    position: relative;
+}
+
+ul:not(.concluidas) > li > form > input[type=submit] {
+    background-color: red;
+}
+
+.concluidas > li > h3 {
+    text-decoration: line-through;
+}
+
+.mensagem-erro {
+    font-size: 0.8em;
+    color: red;
+}

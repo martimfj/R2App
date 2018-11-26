@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.6">
+        <link rel="stylesheet" href="/static/bootstrap-reboot.min.css" type="text/css">
+        <link rel="stylesheet" href="/static/rooms.css" type="text/css">
+        <title>Room Reserve</title>
+    </head>
+    <body>
+        <div>
+            <h1>Room list (Hostname: {{ hostname }} - Process ID: {{ process }}</h1>
+
+            <h2>Create room</h2>
+            <form action="/" method="POST">
+                <p class="mensagem-erro">{{ error_message }}</p>
+                <input type="text" name="name" placeholder="Room name">
+                <input type="text" name="capacity" placeholder="Capacity">
+                <select name="room_type">
+                    <option value="Sala de aula" selected>Sala de aula</option>
+                    <option value="Sala de reunião">Sala de reunião</option>
+                    <option value="Sala de estudos">Sala de estudos</option>
+                </select>
+                <select name="floor">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                </select>
+                <input type="submit" value="Create">
+            </form>
+            <h2>Rooms</h2>
+            <ul>
+            {% for room in rooms %}
+                <li>
+                    <h3>{{ room['name'] }}</h3>
+                    <p>Room type: {{ room['room_type'] }}</p>
+                    <p>Floor: {{ room['floor'] }}</p>
+                    <p>Floor: {{ room['capacity'] }}</p>
+                    <form action="/" method="POST">
+                        <input type="hidden" name="id" value="{{ room['name'] }}">
+                        <input type="submit" value="&#10007;" disabled></form>
+                    </form>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </body>
+</html>
