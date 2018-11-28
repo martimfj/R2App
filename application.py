@@ -6,7 +6,7 @@ import socket
 app = Flask(__name__)
 
 app.config['MONGO_DBNAME'] = 'reserveroom'
-app.config['MONGO_URI'] = 'mongodb://localhost:27017/reserveroom'
+app.config['MONGO_URI'] = os.environ['DB_PORT_27017_TCP_ADDR'], 27017)
 
 mongo = PyMongo(app)
 room = mongo.db.room
